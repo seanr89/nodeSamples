@@ -45,7 +45,8 @@
         "no-trailing-whitespace": true,
         "no-null-keyword": true,
         "prefer-const": true,
-        "jsdoc-format": true
+        "jsdoc-format": true,
+        "object-literal-sort-keys": false
     },
     "rulesDirectory": []
 }

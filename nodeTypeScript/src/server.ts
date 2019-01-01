@@ -1,5 +1,9 @@
 
+import bodyParser from "body-parser";
 import express from "express";
+import logger from "../utils/logger";
+
+// Create Express server
 const app = express();
 
 app.get("/", (req, res) => res.send("Hello World!"));
