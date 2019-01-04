@@ -1,0 +1,18 @@
+{
+  "name": "nodeRabbitMessaging",
+  "version": "1.0.0",
+  "description": "test app for node and rabbitmq communication examples",
+  "main": "server.js",
+  "author": "Sean Rafferty",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "prettier": "1.15.3"
+  },
+  "dependencies": {
+    "amqplib": "^0.5.3"
+  }
+}

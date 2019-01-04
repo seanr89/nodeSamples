@@ -1,0 +1,15 @@
+{
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 6
+      },
+    "rules": {
+      "quotes": [2, "single"],
+      "no-console": 0,
+      "strict" : 1
+    },
+    "env": {
+        "es6": true,
+        "node": true
+      }
+}
