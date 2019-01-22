@@ -2,11 +2,11 @@
     "compilerOptions": {
         "module": "commonjs",
         "esModuleInterop": true,
-        "target": "es6",
+        "target": "es6",    //default is es5
         "noImplicitAny": true,
         "moduleResolution": "node",
         "sourceMap": true,
-        "outDir": "dist",
+        "outDir": "dist", //set the output directory
         "baseUrl": ".",
         "paths": {
             "*": [
@@ -19,6 +19,9 @@
         ]
     },
     "include": [
-        "src/**/*"
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"     //which files or directories to ignore
     ]
 }

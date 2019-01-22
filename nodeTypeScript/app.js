@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import logger from "./util/logger";
+import { URLRouter } from "./src/routes/url_routes";
 
 // Create Express server
 const app = express();
