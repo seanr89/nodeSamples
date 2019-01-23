@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { Express, Request, Response, Router } from "express";
 
 export class URLRouter {
     public router: Router;
@@ -10,6 +10,13 @@ export class URLRouter {
   constructor() {
     this.router = Router();
     this.init();
+  }
+
+  public routes(app: Express): void {
+    app.route("/urls")
+    .get((req: Request, res: Response) => {
+      res.status(200).send("hi");
+      });
   }
 
   /**
