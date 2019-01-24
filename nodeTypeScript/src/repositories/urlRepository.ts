@@ -1,5 +1,5 @@
 
-class URLRepository {
+export class URLRepository {
 
     /**
      * base constructor for a repository object
@@ -15,6 +15,7 @@ class URLRepository {
      */
     public getAll(callback: () => void) {
         console.log("getAll called");
+        callback();
     }
 
     /**

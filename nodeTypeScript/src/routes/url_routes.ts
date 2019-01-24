@@ -1,7 +1,10 @@
-import { Express, Request, Response, Router } from "express";
+import { Request, Response, Router } from "express";
+import express = require("express");
+import { URLRepository } from "../repositories/urlRepository";
 
 export class URLRouter {
     public router: Router;
+    public urlRepo: URLRepository;
 
   /**
    * Initialize the HeroRouter
@@ -12,10 +15,11 @@ export class URLRouter {
     this.init();
   }
 
-  public routes(app: Express): void {
+  public getRoutes(app: express.Application): void {
     app.route("/urls")
     .get((req: Request, res: Response) => {
-      res.status(200).send("hi");
+        res.status(200).send("hi");
+        this.urlRepo.getAll(this.callbackMethod);
       });
   }
 
@@ -24,7 +28,14 @@ export class URLRouter {
    * endpoints.
    */
   private  init() {
-    // this.router.get('/', this.getAll);
+    this.urlRepo = new URLRepository();
+  }
+
+  /**
+   * example callback method
+   */
+  private callbackMethod() {
+    console.log("callback triggered");
   }
 }
 

@@ -8,7 +8,7 @@
     "url": "https://github.com/seanr89/nodeSamples/tree/master/nodeTypeScript"
   },
   "scripts": {
-    "build-ts": "tsc",
+    "build": "tsc",
     "dev": "ts-node ./src/server.ts",
     "start": "npm run serve",
     "serve": "nodemon ./dist/server.js",
@@ -27,6 +27,7 @@
   "devDependencies": {
     "@types/tedious": "^2.6.1",
     "nodemon": "^1.18.9",
+    "ts-node": "^8.0.1",
     "tslint": "^5.12.0",
     "typescript": "^3.2.2"
   }
