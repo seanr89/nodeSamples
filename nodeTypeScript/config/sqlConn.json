@@ -1,0 +1,10 @@
+{
+    "default":{
+        "server"  : "uptimeserver.database.windows.net",
+        "userName": "UptimeAdmin",
+        "password": "5R7onnie",
+        "options": { "encrypt": true, "database": "UptimeDB",
+            "requestTimeout" : 10000,
+            "rowCollectionOnRequestCompletion" : true }
+    }
+}
