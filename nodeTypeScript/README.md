@@ -6,6 +6,7 @@ https://github.com/Microsoft/TypeScript-Node-Starter
 
 
 # Views and Templating
+    - Could be moved onto another screen
 Look at following link : https://expressjs.com/en/guide/using-template-engines.html
     - uses a tool called PUG
 
