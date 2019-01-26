@@ -15,6 +15,11 @@ export class MyConnection {
         this.conn = new Connection(configDetails);
     }
 
+    /**
+     *
+     * @param sql
+     * @param callback
+     */
     public executeStatement(sql: string, callback: (error: Error, rowCount: number, rows: any[]) => void) {
         console.log("executeStatement");
         this.openConnection();
@@ -26,6 +31,13 @@ export class MyConnection {
         });
         this.conn.execSql(req);
     }
+
+    /**
+     *
+     * @param sql
+     * @param parameters
+     * @param callback
+     */
 
     public executeInsert(sql: string, parameters: SQLParam[], callback: () => void) {
         console.log("executeInsert");
