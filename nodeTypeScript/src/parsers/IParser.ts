@@ -1,0 +1,4 @@
+
+interface IParser {
+    name: string;
+}
