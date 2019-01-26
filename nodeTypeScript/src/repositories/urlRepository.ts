@@ -1,12 +1,15 @@
+import { MyConnection } from "../DataConnections/myconnection";
 
 export class URLRepository {
+
+    private conn: MyConnection;
 
     /**
      * base constructor for a repository object
      * @constructor
      */
     constructor() {
-        // TODO - implement base objects here!
+        this.conn = new MyConnection();
     }
 
     /**
@@ -15,6 +18,9 @@ export class URLRepository {
      */
     public getAll(callback: () => void) {
         console.log("getAll called");
+        this.conn.executeStatement("SELECT * FROM [dbo].[URL]", (error: Error, rowCount: number, rows: any[]) => {
+            // TODO - handle response
+        });
         callback();
     }
 

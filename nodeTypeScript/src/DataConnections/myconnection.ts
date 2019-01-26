@@ -15,12 +15,13 @@ export class MyConnection {
         this.conn = new Connection(configDetails);
     }
 
-    public executeStatement(sql: string, callback: () => void) {
+    public executeStatement(sql: string, callback: (error: Error, rowCount: number, rows: any[]) => void) {
         console.log("executeStatement");
         this.openConnection();
 
         const req = new Request(sql, (error: Error, rowCount: number, rows: any[]) => {
-            // TADA
+            // trigger callback method
+            callback(error, rowCount, rows);
         });
         this.conn.execSql(req);
     }
@@ -32,9 +33,14 @@ export class MyConnection {
             if (error !== null) {
                 // we got a problem
             }
+            // loop through and add all params if requested
             for (const param of parameters) {
                 req.addParameter(param.name, param.type, param.value);
             }
+
+            req.on("requestCompleted", () => {
+                // TODO
+            });
         });
 
         this.conn.execSql(req);
