@@ -2,7 +2,7 @@
   "name": "nodeTypeScript",
   "version": "1.0.0",
   "description": "node API using typescript",
-  "main": "dist/server.js",
+  "main": "src/server.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/seanr89/nodeSamples/tree/master/nodeTypeScript"
@@ -27,6 +27,7 @@
   "devDependencies": {
     "@types/tedious": "^2.6.1",
     "nodemon": "^1.18.9",
+    "tedious": "^4.1.3",
     "ts-node": "^8.0.1",
     "tslint": "^5.12.0",
     "typescript": "^3.2.2"

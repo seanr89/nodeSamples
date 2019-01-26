@@ -11,7 +11,7 @@ export class MyConnection {
      */
     constructor() {
         // This is the base object constructor
-        const configDetails = data.default;
+        const configDetails = data.connection;
         this.conn = new Connection(configDetails);
     }
 
@@ -21,6 +21,7 @@ export class MyConnection {
 
         const req = new Request(sql, (error: Error, rowCount: number, rows: any[]) => {
             // trigger callback method
+            console.log(rows);
             callback(error, rowCount, rows);
         });
         this.conn.execSql(req);

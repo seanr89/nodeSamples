@@ -1,6 +1,6 @@
 {
-    "default":{
-        "server"  : "uptimeserver.database.windows.net",
+    "connection":{
+        "server": "uptimeserver.database.windows.net",
         "userName": "UptimeAdmin",
         "password": "5R7onnie",
         "options": { "encrypt": true, "database": "UptimeDB",
