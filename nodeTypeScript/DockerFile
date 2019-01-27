@@ -1,14 +1,8 @@
-# https://github.com/docker/labs/tree/master/developer-tools/nodejs/porting
-
-# Node v10
-FROM node:10
-
-# Use this directory to store files, run npm, and launch our application:
-WORKDIR /app
-COPY package.json /app
-RUN npm install
-COPY . /app
-# What we want to do is to run our application
-#CMD node server.js
-# Expose port 8000 to the outside once the container has launched
-EXPOSE 8000
+FROM node:10.13-alpine
+ENV NODE_ENV production
+WORKDIR /usr/src/app
+COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
+RUN npm install --production --silent && mv node_modules ../
+COPY . .
+EXPOSE 3000
+CMD npm start

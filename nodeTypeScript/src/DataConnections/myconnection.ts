@@ -25,9 +25,11 @@ export class MyConnection {
         this.openConnection();
 
         const req = new Request(sql, (error: Error, rowCount: number, rows: any[]) => {
-            // trigger callback method
-            console.log(rows);
             callback(error, rowCount, rows);
+
+            req.on("requestCompleted", () => {
+                this.closeConnection();
+            });
         });
         this.conn.execSql(req);
     }
@@ -52,7 +54,7 @@ export class MyConnection {
             }
 
             req.on("requestCompleted", () => {
-                // TODO
+                this.closeConnection();
             });
         });
 
@@ -68,7 +70,11 @@ export class MyConnection {
         });
     }
 
+    /**
+     * close the database connection
+     */
     private closeConnection() {
         // Not sure if directly required but it is useful
+        this.conn.close();
     }
 }
