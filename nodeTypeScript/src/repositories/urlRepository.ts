@@ -16,12 +16,12 @@ export class URLRepository {
      * handle the requesting of all url records
      * @param {function} callback : callback method to allow for async response handling
      */
-    public getAll(callback: () => void) {
+    public getAll(callback: (message: string) => void) {
         console.log("getAll called");
         this.conn.executeStatement("SELECT * FROM [dbo].[URL]", (error: Error, rowCount: number, rows: any[]) => {
             // TODO - handle response
+            callback(error.message);
         });
-        callback();
     }
 
     /**

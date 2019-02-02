@@ -18,7 +18,7 @@ export class MyConnection {
     /**
      *
      * @param sql
-     * @param callback
+     * @param [Function] callback(Error, number, any[])
      */
     public executeStatement(sql: string, callback: (error: Error, rowCount: number, rows: any[]) => void) {
         console.log("executeStatement");

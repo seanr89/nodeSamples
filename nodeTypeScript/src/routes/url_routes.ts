@@ -18,8 +18,9 @@ export class URLRouter {
   public getRoutes(app: express.Application): void {
     app.route("/urls")
     .get((req: Request, res: Response) => {
-        res.status(200).send("hi");
-        this.urlRepo.getAll(this.callbackMethod);
+        this.urlRepo.getAll((message: string) => {
+          res.status(200).send(message);
+        });
       });
   }
 
@@ -32,7 +33,7 @@ export class URLRouter {
   }
 
   /**
-   * example callback method
+   * example callback method to allow method to be triggered
    */
   private callbackMethod() {
     console.log("callback triggered");
