@@ -16,7 +16,7 @@ export class MyConnection {
     }
 
     /**
-     *
+     * handle the execution of a SQL database statement
      * @param sql
      * @param [Function] callback(Error, number, any[])
      */

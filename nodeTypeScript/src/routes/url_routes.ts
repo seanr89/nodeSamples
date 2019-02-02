@@ -15,13 +15,24 @@ export class URLRouter {
     this.init();
   }
 
+  /**
+   *
+   * @param app : express application to handles the routes
+   */
   public getRoutes(app: express.Application): void {
-    app.route("/urls")
+    app.route("/url")
     .get((req: Request, res: Response) => {
         this.urlRepo.getAll((message: string) => {
           res.status(200).send(message);
         });
       });
+
+    app.route("/url/:urlID")
+    .get((req: Request, res: Response) => {
+        // Console log out :)
+        const id = req.params.urlID;
+        console.log("id is:", id);
+    });
   }
 
   /**
