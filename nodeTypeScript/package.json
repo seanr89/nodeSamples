@@ -2,7 +2,7 @@
   "name": "nodeTypeScript",
   "version": "1.0.0",
   "description": "node API using typescript",
-  "main": "src/server.ts",
+  "main": "dist//src/server.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/seanr89/nodeSamples/tree/master/nodeTypeScript"
@@ -10,10 +10,10 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node ./src/server.ts",
-    "start": "npm run serve",
-    "serve": "nodemon ./dist/server.js",
+    "start": "nodemon ./dist//src/server.js",
     "watch-node": "nodemon dist/server.js",
-    "watch-ts": "tsc -w"
+    "watch-ts": "tsc -w",
+    "test": "echo \" Error: no test specified\" && exit 1"
   },
   "author": "Sean Rafferty",
   "license": "MIT",
