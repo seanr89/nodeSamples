@@ -3,6 +3,7 @@
  * handle URL parameter details
  */
 export class URL {
+
     /**
      * constructor
      * @param id : the unique record for the URL
