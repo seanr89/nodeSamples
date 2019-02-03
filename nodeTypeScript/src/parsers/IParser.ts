@@ -1,4 +1,4 @@
 
-interface IParser {
+export interface IParser {
     name: string;
 }

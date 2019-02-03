@@ -1,8 +1,11 @@
 import { MyConnection } from "../DataConnections/myconnection";
+import { IParser } from "../parsers/IParser";
+import factory from "../parsers/parserFactory";
 
 export class URLRepository {
 
     private conn: MyConnection;
+    private parser: IParser;
 
     /**
      * base constructor for a repository object
@@ -10,6 +13,7 @@ export class URLRepository {
      */
     constructor() {
         this.conn = new MyConnection();
+        this.parser = factory.getParserForObject("URL");
     }
 
     /**

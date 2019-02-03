@@ -1,4 +1,5 @@
 import { URL } from "../models/URL";
+import { IParser } from "./IParser";
 
 export class URLParser implements IParser {
     public name: string;
