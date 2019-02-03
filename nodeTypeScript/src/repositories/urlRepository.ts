@@ -1,11 +1,12 @@
+import { URL } from "url";
 import { MyConnection } from "../DataConnections/myconnection";
-import { IParser } from "../parsers/IParser";
 import factory from "../parsers/parserFactory";
+import { URLParser } from "../parsers/URLParser";
 
 export class URLRepository {
 
     private conn: MyConnection;
-    private parser: IParser;
+    private parser: URLParser;
 
     /**
      * base constructor for a repository object
@@ -13,7 +14,7 @@ export class URLRepository {
      */
     constructor() {
         this.conn = new MyConnection();
-        this.parser = factory.getParserForObject("URL");
+        this.parser = factory.getParserForObject("URL") as URLParser;
     }
 
     /**
@@ -24,6 +25,10 @@ export class URLRepository {
         console.log("getAll called");
         this.conn.executeStatement("SELECT * FROM [dbo].[URL]", (error: Error, rowCount: number, rows: any[]) => {
             // TODO - handle response
+            let results: URL[];
+            if (error !== undefined) {
+                results = this.parser.parseSQLDataToArray(rows);
+            }
             callback(error.message);
         });
     }
