@@ -20,6 +20,8 @@
 https://codeburst.io/typescript-node-starter-simplified-60c7b7d99e27
 # Github Sample Project
 https://github.com/Microsoft/TypeScript-Node-Starter
+### another amazing link
+https://medium.com/@alex.permyakov/production-ready-node-js-rest-apis-setup-using-typescript-postgresql-and-redis-a9525871407
 
 ## Building and Executing Files
 These can be found under the `scripts/` folder

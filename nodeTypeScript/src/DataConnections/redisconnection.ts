@@ -1,3 +1,4 @@
+import * from "redis";
 
 class RedisConnection {
 

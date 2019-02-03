@@ -1,6 +1,8 @@
 import * as bodyParser from "body-parser"; // used to parse the form data that you pass in the request
 import express from "express";
+import middleware from "./middleware";
 import { URLRouter } from "./routes/url_routes";
+import { applyMiddleware } from "./utils";
 
 class App {
 
@@ -9,19 +11,10 @@ class App {
 
     constructor() {
         this.app = express(); // run the express instance and store in app
-        this.config();
+        applyMiddleware(middleware, this.app);
         this.urlRoutes = new URLRouter();
 
         this.setupRoutes();
-    }
-
-    private config(): void {
-        // support application/json type post data
-        this.app.use(bodyParser.json());
-        // support application/x-www-form-urlencoded post data
-        this.app.use(bodyParser.urlencoded({
-            extended: false,
-        }));
     }
 
     private setupRoutes() {

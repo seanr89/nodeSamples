@@ -46,7 +46,8 @@
         "no-null-keyword": true,
         "prefer-const": false,
         "jsdoc-format": true,
-        "object-literal-sort-keys": false
+        "object-literal-sort-keys": false,
+        "max-classes-per-file":false
     },
     "rulesDirectory": []
 }

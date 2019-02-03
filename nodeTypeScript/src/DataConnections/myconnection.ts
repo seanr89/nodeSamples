@@ -1,5 +1,5 @@
 import { Connection, Request, TediousType } from "tedious";
-import * as data from "../../config/sqlConn.json";
+import * as data from "../config/sqlConn.json";
 import { SQLParam } from "../models/SqlParam";
 
 export class MyConnection {
