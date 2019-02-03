@@ -22,9 +22,11 @@
     "@types/express": "^4.16.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "redis": "^2.8.0",
     "winston": "^3.1.0"
   },
   "devDependencies": {
+    "@types/redis": "^2.8.10",
     "@types/tedious": "^2.6.1",
     "nodemon": "^1.18.9",
     "tedious": "^4.1.3",
