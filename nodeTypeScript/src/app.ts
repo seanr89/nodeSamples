@@ -12,7 +12,7 @@ class App {
         this.config();
         this.urlRoutes = new URLRouter();
 
-        // this.setupRoutes();
+        this.setupRoutes();
     }
 
     private config(): void {

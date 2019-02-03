@@ -1,5 +1,6 @@
 import { Request, Response, Router } from "express";
 import express = require("express");
+import { URL } from "..//models/URL";
 import { URLRepository } from "../repositories/urlRepository";
 
 export class URLRouter {
@@ -20,10 +21,11 @@ export class URLRouter {
    * @param app : express application to handles the routes
    */
   public getRoutes(app: express.Application): void {
+    console.log("URL getRoutes");
     app.route("/url")
     .get((req: Request, res: Response) => {
-        this.urlRepo.getAll((message: string) => {
-          res.status(200).send(message);
+        this.urlRepo.getAll((message: string, result: URL[]) => {
+          res.status(200).send(result);
         });
       });
 

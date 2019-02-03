@@ -1,5 +1,5 @@
-import { URL } from "url";
 import { MyConnection } from "../DataConnections/myconnection";
+import { URL } from "../models/URL";
 import factory from "../parsers/parserFactory";
 import { URLParser } from "../parsers/URLParser";
 
@@ -21,15 +21,16 @@ export class URLRepository {
      * handle the requesting of all url records
      * @param {function} callback : callback method to allow for async response handling
      */
-    public getAll(callback: (message: string) => void) {
+    public getAll(callback: (message: string, res: URL[]) => void) {
         console.log("getAll called");
         this.conn.executeStatement("SELECT * FROM [dbo].[URL]", (error: Error, rowCount: number, rows: any[]) => {
-            // TODO - handle response
             let results: URL[];
-            if (error !== undefined) {
-                results = this.parser.parseSQLDataToArray(rows);
+            if (error === undefined) {
+                results = this.parser.parseSQLDataToArray(rowCount, rows);
+                callback(undefined, results);
+            } else {
+                callback(error.message, undefined);
             }
-            callback(error.message);
         });
     }
 

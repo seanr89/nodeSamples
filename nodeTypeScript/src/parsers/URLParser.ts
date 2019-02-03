@@ -13,9 +13,12 @@ export class URLParser implements IParser {
 
         let result: URL[];
         if (data !== null) {
+            result = [];
             data.forEach((element) => {
                 const resp = this.parseSQLRowToObject(element);
-                result.push(resp);
+                if (resp !== undefined) {
+                    result.push(resp);
+                }
             });
         }
         return result;
@@ -23,7 +26,7 @@ export class URLParser implements IParser {
 
     private parseSQLRowToObject(data: any): URL {
         console.log("parseSQLRowToObject");
-        if (data !== null) {
+        if (data !== undefined) {
             const url = new URL(data[0].value, data[1].value);
             return url;
         }
