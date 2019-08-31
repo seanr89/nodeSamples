@@ -27,6 +27,10 @@ export class URLRouter {
         this.urlRepo.getAll((message: string, result: URL[]) => {
           res.status(200).send(result);
         });
+      })
+    .post((req: Request, res: Response) => {
+        const postBody = req.body;
+        console.log(postBody);
       });
 
     app.route("/url/:urlID")
