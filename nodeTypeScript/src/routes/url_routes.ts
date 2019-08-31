@@ -4,15 +4,15 @@ import { URL } from "..//models/URL";
 import { URLRepository } from "../repositories/urlRepository";
 
 export class URLRouter {
-    public router: Router;
-    public urlRepo: URLRepository;
+  public router: Router;
+  public urlRepo: URLRepository;
 
   /**
    * Initialize the HeroRouter
    * @constructor
    */
-  constructor() {
-    this.router = Router();
+  constructor(router: Router) {
+    this.router = router;
     this.init();
   }
 
@@ -22,22 +22,22 @@ export class URLRouter {
    */
   public getRoutes(app: express.Application): void {
     console.log("URL getRoutes");
-    app.route("/url")
-    .get((req: Request, res: Response) => {
+    app
+      .route("/url")
+      .get((req: Request, res: Response) => {
         this.urlRepo.getAll((message: string, result: URL[]) => {
           res.status(200).send(result);
         });
       })
-    .post((req: Request, res: Response) => {
+      .post((req: Request, res: Response) => {
         const postBody = req.body;
         console.log(postBody);
       });
 
-    app.route("/url/:urlID")
-    .get((req: Request, res: Response) => {
-        // Console log out :)
-        const id = req.params.urlID;
-        console.log("id is:", id);
+    app.route("/url/:urlID").get((req: Request, res: Response) => {
+      // Console log out :)
+      const id = req.params.urlID;
+      console.log("id is:", id);
     });
   }
 
@@ -45,7 +45,7 @@ export class URLRouter {
    * Take each handler, and attach to one of the Express.Router's
    * endpoints.
    */
-  private  init() {
+  private init() {
     this.urlRepo = new URLRepository();
   }
 
@@ -58,5 +58,4 @@ export class URLRouter {
 }
 
 // Create the urlRouter, and export its configured Express.Router
-const urlRouter = new URLRouter();
-// export default urlRouter.router;
+//const urlRouter = new URLRouter();
