@@ -7,7 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint */*.{js,ts} --quiet --fix",
-    "dev": "nodemon --config nodemon.json src/app.ts"
+    "dev": "nodemon --config nodemon.json src/app.ts",
+    "build": "tsc -p .",
+    "start": "ts-node dist/app.js"
   },
   "author": "Sean Rafferty",
   "license": "MIT",
