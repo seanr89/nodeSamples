@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+    practiceapi:
+        image: practiceapi
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        environment:
+            NODE_ENV: production
+        ports:
+            - 3000:3000
+        mongodb:
+            image: mongo:latest
+            ports:
+                - 27017:27017

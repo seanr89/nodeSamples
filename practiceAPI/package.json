@@ -13,8 +13,12 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "dayjs": "^1.10.6",
     "eslint": "^7.32.0",
     "express": "^4.17.1",
+    "mongoose": "^5.13.5",
+    "pino": "^6.13.0",
+    "pino-pretty": "^5.1.2",
     "typescript": "^4.3.5"
   },
   "devDependencies": {
