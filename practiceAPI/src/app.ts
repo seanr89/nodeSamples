@@ -12,7 +12,9 @@ app.use(express.urlencoded({ extended: false }));
 app.listen(config.port, config.host, () => {
     log.info(`Server listing at http://${config.port}:${config.host}`);
 
+    //Run DB Connect for MongoDB
     connect();
 
+    //Connect Update API Routes
     routes(app);
 });
