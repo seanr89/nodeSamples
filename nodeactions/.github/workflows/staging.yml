@@ -1,0 +1,10 @@
+# Dedicated build to support stagin pushes!
+name: Node Staging CI/CD
+
+on:
+  push:
+    branches: [ staging ]
+
+jobs:
+  local-node-build:
+    uses: ./.github/workflows/reusableworkflow.yml

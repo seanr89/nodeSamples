@@ -1,0 +1,26 @@
+{
+  "name": "nodeactions",
+  "version": "1.0.0",
+  "description": "practice app",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --passWithNoTests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanr89/NodeActions.git"
+  },
+  "author": "sean rafferty",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seanr89/NodeActions/issues"
+  },
+  "homepage": "https://github.com/seanr89/NodeActions#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}

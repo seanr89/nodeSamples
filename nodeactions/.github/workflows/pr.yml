@@ -1,0 +1,9 @@
+# Dedicated CI Build Pipeline solely for executing builds for PR's
+name: Pull Request CI Build
+
+on:
+  pull_request:
+
+jobs:
+  local-node-build:
+    uses: ./.github/workflows/reusableworkflow.yml
